@@ -1,0 +1,6 @@
+[Description]
+Description=Write a health check line to the log
+
+[Service]
+Type=oneshot
+ExecStart=%h/Documents/GitHub/devops-journey/scripts/healthcheck.sh
