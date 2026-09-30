@@ -1,24 +1,3 @@
-find . TESTS
-c = bytes
-! negates
-
-2 is the error stream (stderr)
-> means "send it to"
-/dev/null is the file that discards whatever it receives
-find /", "hide errors → 2>/dev/null".
-
-grep WORD FILE
-
-scp works like cp, except one side can be on another machine:
-
-cp   FROM        TO
-scp  FROM        TO
-
-private keys → 600, owner read+write only
-
-31790/tcp open ssl/unknown
-
-
 # Command Notes
 
 ## Problem → Tool
@@ -30,3 +9,11 @@ private keys → 600, owner read+write only
 - copy a file between machines → scp
 - read/decode base64 → base64 -d
 - hide a command's error output → 2>/dev/null
+
+## Syntax Reminders
+
+(The parts that can be forgotten)
+- find: find . TESTS   (c = bytes, ! negates)
+- 2>/dev/null = discard errors (2 = stderr, > = send to, /dev/null = discards)
+- chmod 600 = owner read+write only (for private keys)
+- scp = cp but one side is user@host:path
