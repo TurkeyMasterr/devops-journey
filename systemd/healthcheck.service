@@ -1,4 +1,4 @@
-[Description]
+[Unit]
 Description=Write a health check line to the log
 
 [Service]
