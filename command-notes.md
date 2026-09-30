@@ -10,6 +10,12 @@
 - read/decode base64 → base64 -d
 - hide a command's error output → 2>/dev/null
 
+- schedule a script to run automatically → systemd .service + .timer
+- see a unit's run history and errors → journalctl --user -u NAME.service
+- reload unit files after editing → systemctl --user daemon-reload
+- start + enable a timer → systemctl --user enable --now NAME.timer
+- check a systemd unit's state → systemctl --user status NAME
+
 ## Syntax Reminders
 
 (The parts that can be forgotten)
