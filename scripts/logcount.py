@@ -3,7 +3,7 @@ import sys
 
 if len(sys.argv) < 2:
     print("Usage: python3 logcount.py <logfile>")  
-    sys.exit()
+    sys.exit(1)
 file = sys.argv[1]
 
 try:
@@ -16,7 +16,7 @@ try:
 
         for line in logs:
             parts  = line.split()
-            if parts == []:
+            if not parts:
                 continue
             ip_list.append(parts[0])
              
@@ -26,8 +26,9 @@ try:
             else:
                 ip_dict[item] = 1     
         
-        for key, value in ip_dict.items():
-            print(value, key)
+        for key, value in sorted(ip_dict.items(), reverse=True, key=lambda item: item[1]):
+            print(f"{value:6} {key}")
 
 except FileNotFoundError:
     print(f"Error: file not found: {file}")
+    sys.exit(1)
