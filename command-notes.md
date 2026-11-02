@@ -28,6 +28,24 @@
 - run a script from vim without switching terminals → :w | !python3 %
 - ``ggVG`` to select everything. ``ggVGy`` to copy(yank) text to vim internal memory, ``ggVG"+y`` to copy(yank) to system clipboard (must be in normal mode, and so far only works with vimx (vim-X11)).
 
+## Docker Commands
+- docker run [container]
+- docker pull [container]
+- docker ps
+- docker ps -a (to view stopped containers as well)
+- docker rmi [image]
+- docker rm [container]
+- docker system prune (prunes all stopped containers)
+- docker pause [container]
+- docker unpause [container]
+    # Flags
+     -i 'interactive' (Tells docker to open the container in interactive mode, which means the container can receive standard input (STDIN) and output(STDOUT) results from the user and be processed in the container.)
+    --name 
+    -t 'tty' (Basically opens up the console to input commands into the container)
+
+- eg: ``docker run -d -it --name looper ubuntu sh -c 'while true; do date; sleep 1; done'``
+
+
 ## Syntax Reminders
 
 (The parts that can be forgotten)
@@ -41,3 +59,5 @@
 
 awk '{print $1}' plus uniq -c counted the blank lines in sample.log as one entry, and the Python version skips blank lines purposefully with ``if not parts`` statement.
 awk ‘NF {print $1}’ skips blank lines. Without it, the blank lines become one counted entry.
+
+
