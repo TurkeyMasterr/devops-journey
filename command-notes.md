@@ -38,10 +38,13 @@
 - docker system prune (prunes all stopped containers)
 - docker pause [container]
 - docker unpause [container]
+- docker exec [container] [commands/flags] (Executes a command inside an already running program 
     # Flags
      -i 'interactive' (Tells docker to open the container in interactive mode, which means the container can receive standard input (STDIN) and output(STDOUT) results from the user and be processed in the container.)
     --name 
     -t 'tty' (Basically opens up the console to input commands into the container)
+    --no-stdin (this tells docker to start the container in a mode where it doesn't accept standard input, even shutting down the container with Ctrl+C will not workwhen a container is ran with this flag. However, hitting Ctrl+C twice in a row, it overrides and does exit the container. This is just a safety precation, like an emergency stop.)
+
 
 - eg: ``docker run -d -it --name looper ubuntu sh -c 'while true; do date; sleep 1; done'``
 
