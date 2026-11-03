@@ -10,6 +10,9 @@ COPY hello.sh .
 # If chmod chmod is skipped,uncomment this command to add execution permissions during the build.
 # RUN chmod +x hello.sh
 
+# Execute a command with `/bin/sh -c` prefix.
+RUN touch additional.txt
+
 # When running docker run the command will be ./hello.sh
 CMD ["./hello.sh"]
 
