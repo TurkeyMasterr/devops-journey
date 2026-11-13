@@ -73,7 +73,6 @@
 - Debug order: who sent the request → which log saw it → does the config match.
 
 ## Syntax Reminders
-
 (The parts that can be forgotten)
 - $? = exit status of the last command, and every command overwrites it
 - f-string width: {value:6} is a 6-wide column, and numbers right-align by default
